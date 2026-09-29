@@ -28,26 +28,34 @@ client.once(Events.ClientReady, (readyClient) => {
 
 client.on(Events.MessageCreate, async (message) => {
   if (message.author.bot) return;
-  const channel = client.channels.cache.get("1112805993286484059");
-  if (!channel) return console.error("The channel does not exist!");
-  if (message.content.includes("Brag") || message.content.includes("brag")) {
-    await message.reply("Logan.");
-  } else if (message.content.includes("juice") || message.content.includes("Juice")) {
-    await message.react("🧃");
-  } else if (message.content.includes("God") || message.content.includes("god")) {
-    await message.reply("https://tenor.com/view/cat-meme-gif-7962678019719258229");
-  } else if (message.content.includes("Gloomboe") || message.content.includes("gloomboe")) {
-    await message.reply("https://tenor.com/view/hal9000-gif-22241038");
-  } else if (message.content.includes("Rain") || message.content.includes("Bungus") || message.content.includes("rain") || message.content.includes("bungus")) {
-    await message.reply("https://tenor.com/view/risk-of-rain-risk-of-rain-returns-risk-of-rain-2-bustling-fungus-bungus-gif-10235144301174499116");
-  } else if (message.content.includes("Monkey") || message.content.includes("monkey")) {
-    await message.reply("https://tenor.com/view/monkey-gif-22203444");
+  const channel0 = client.channels.cache.get("1112805993286484059"); //Gae Bois general
+  const channel1 = client.channels.cache.get("1112805993286484059");
+  if (!(channel0 && channel1)) return console.error("The channel does not exist!");
+  if (message.channel.id == channel0.id) {
+    if (message.content.includes("Brag") || message.content.includes("brag")) {
+      await message.reply("Logan.");
+    } else if (message.content.includes("juice") || message.content.includes("Juice")) {
+      await message.react("🧃");
+    } else if (message.content.includes("God") || message.content.includes("god")) {
+      await message.reply("https://klipy.com/gifs/one-piece-edit-2");
+    } else if (message.content.includes("Gloomboe") || message.content.includes("gloomboe")) {
+      await message.reply("https://tenor.com/view/hal9000-gif-22241038");
+    } else if (message.content.includes("Seve") || message.content.includes("monkey")) {
+      await message.reply("https://tenor.com/view/monkey-gif-22203444");
+    }
   }
+  if (message.channel.id == channel1.id) {
+    if (message.content.includes("Gloomboe") || message.content.includes("gloomboe")) {
+      await message.reply("https://tenor.com/view/hal9000-gif-22241038");
+    } 
+  }
+  
+  
   //https://tenor.com/view/monkey-gif-22203444
-
   //
   //channel.send(`Message received: ${message.content}`);
 });
+
 
 
 
